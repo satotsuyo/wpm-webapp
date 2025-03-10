@@ -29,12 +29,13 @@ if text:
     if st.button("リーディングスタート"):
         st.write("読み終わったら、終了ボタンを押してください")
         start_time = time.time()  # 開始時間を記録
+        st.session_state.start_time = start_time  # session_stateに保存
 
     # 終了ボタンで時間を計測
-    if 'start_time' in locals():  # start_timeが存在する場合のみ終了処理を行う
+    if 'start_time' in st.session_state:  # session_stateにstart_timeが保存されている場合のみ終了処理を行う
         if st.button("終了"):
             end_time = time.time()  # 終了時間を記録
-            reading_time_s = end_time - start_time  # 経過時間を計算
+            reading_time_s = end_time - st.session_state.start_time  # 経過時間を計算
             reading_time_m = reading_time_s / 60  # 分単位に変換
 
             # 読む時間が0だった時、再計測
@@ -42,9 +43,10 @@ if text:
                 st.write("読む時間が0秒です。再度計測してください")
                 if st.button("リーディングスタート（再度）"):
                     start_time = time.time()
+                    st.session_state.start_time = start_time  # session_stateに再保存
                 if st.button("終了（再度）"):
                     end_time = time.time()
-                    reading_time_s = end_time - start_time
+                    reading_time_s = end_time - st.session_state.start_time
                     reading_time_m = reading_time_s / 60
 
             # WPMを計算
