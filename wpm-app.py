@@ -7,7 +7,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # カラムを作成して並列に配置
-col1, col2 = st.columns([3, 2])  # 左側のカラムを3倍広げる（右は2倍）
+col1, col2 = st.columns([4, 1])  # 左側のカラムを4倍広げる（右は1倍）
 
 # 左カラムに入力フォームを配置
 with col1:
