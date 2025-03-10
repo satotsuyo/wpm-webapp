@@ -59,17 +59,17 @@ if text:
             st.write(f"かかった時間は {round(reading_time_m, 2)} 分で")
             st.write(f"あなたのWPMは: {round(wpm, 2)} でした")
 
-# フォントサイズを14pxに変更
+# フォントサイズを18pxに変更
 st.markdown("""
     <style>
         .streamlit-expanderHeader {
-            font-size: 14px !important;
+            font-size: 18px !important;
         }
         .css-1d391kg {
-            font-size: 14px !important;
+            font-size: 18px !important;
         }
         textarea {
-            font-size: 14px !important; /* フォントサイズを14pxに設定 */
+            font-size: 18px !important; /* フォントサイズを18pxに設定 */
         }
     </style>
 """, unsafe_allow_html=True)
