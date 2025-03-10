@@ -25,7 +25,7 @@ if text:
     # 総語数をカウント
     totalwords = len(words)
 
-    # 総語数を表示
+    # カラムを作成して並列に配置
     col1, col2 = st.columns([1, 2])  # 2つのカラムを作成（左と右）
     
     # 左カラムに総語数を表示
@@ -59,7 +59,7 @@ if text:
             # WPMを計算
             wpm = totalwords / reading_time_m
 
-            # 結果を右カラムに表示
+            # 右カラムに結果を表示
             with col2:
                 st.write(f"かかった時間は {round(reading_time_m, 2)} 分で")
                 st.write(f"あなたのWPMは: {round(wpm, 2)} でした")
