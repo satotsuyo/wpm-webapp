@@ -7,12 +7,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # カラムを作成して並列に配置
-col1, col2 = st.columns([3, 2])  # 左側のカラムを3倍広げる（右は2倍）
+col1, col2 = st.columns([4, 1])  # 左側のカラムを4倍広げる（右は1倍）
 
 # 左カラムに入力フォームを配置
 with col1:
     # 読む英文を入力（サイズを調整するために st.text_area を使用）
-    # 入力枠の高さを2倍に設定
     text = st.text_area("読む英文を入力してください", height=400)  # 高さを変更
 
 # 右カラムに、他のボタンなどを配置
@@ -32,8 +31,8 @@ with col2:
         # 総語数をカウント
         totalwords = len(words)
 
-        # 総語数を表示
-        st.write(f"これから読む英文の総語数は {totalwords} です")
+        # 総語数を表示（フォントを大きくし太字に変更）
+        st.markdown(f"<h2 style='font-size: 1.5em; font-weight: bold;'>これから読む英文の総語数は {totalwords} です</h2>", unsafe_allow_html=True)
 
         # リーディングスタートボタンが押されたとき
         if st.button("リーディングスタート"):
@@ -62,9 +61,9 @@ with col2:
                 # WPMを計算
                 wpm = totalwords / reading_time_m
 
-                # 右カラムに結果を表示
-                st.write(f"かかった時間は {round(reading_time_m, 2)} 分で")
-                st.write(f"あなたのWPMは: {round(wpm, 2)} でした")
+                # 結果を表示（フォントを大きくし太字に変更）
+                st.markdown(f"<h2 style='font-size: 1.5em; font-weight: bold;'>かかった時間は {round(reading_time_m, 2)} 分で</h2>", unsafe_allow_html=True)
+                st.markdown(f"<h2 style='font-size: 1.5em; font-weight: bold;'>あなたのWPMは: {round(wpm, 2)} でした</h2>", unsafe_allow_html=True)
 
 # フォントサイズを18pxに変更
 st.markdown("""
