@@ -31,8 +31,8 @@ with col2:
         # 総語数をカウント
         totalwords = len(words)
 
-        # 総語数を表示（フォントを大きくし太字に変更）
-        st.markdown(f"<h2 style='font-size: 1.5em; font-weight: bold;'>これから読む英文の総語数は {totalwords} です</h2>", unsafe_allow_html=True)
+        # 総語数を表示（数字のみ太字・大きく）
+        st.markdown(f"これから読む英文の総語数は <b style='font-size: 1.5em; font-weight: bold;'>{totalwords}</b> です", unsafe_allow_html=True)
 
         # リーディングスタートボタンが押されたとき
         if st.button("リーディングスタート"):
@@ -61,9 +61,9 @@ with col2:
                 # WPMを計算
                 wpm = totalwords / reading_time_m
 
-                # 結果を表示（フォントを大きくし太字に変更）
-                st.markdown(f"<h2 style='font-size: 1.5em; font-weight: bold;'>かかった時間は {round(reading_time_m, 2)} 分で</h2>", unsafe_allow_html=True)
-                st.markdown(f"<h2 style='font-size: 1.5em; font-weight: bold;'>あなたのWPMは: {round(wpm, 2)} でした</h2>", unsafe_allow_html=True)
+                # 結果を表示（数字のみ太字・大きく）
+                st.markdown(f"かかった時間は <b style='font-size: 1.5em; font-weight: bold;'>{round(reading_time_m, 2)}</b> 分で", unsafe_allow_html=True)
+                st.markdown(f"あなたのWPMは: <b style='font-size: 1.5em; font-weight: bold;'>{round(wpm, 2)}</b> でした", unsafe_allow_html=True)
 
 # フォントサイズを18pxに変更
 st.markdown("""
