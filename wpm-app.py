@@ -2,7 +2,9 @@ import streamlit as st
 import time
 
 # タイトルを1行に収める
-st.markdown("<h1 style='text-align: center;'>WPM（Words Per Minute）測定アプリ</h1>", unsafe_allow_html=True)
+st.markdown("""
+    <h1 style='text-align: center; white-space: nowrap;'>WPM（Words Per Minute）測定アプリ</h1>
+""", unsafe_allow_html=True)
 
 # 読む英文を入力（サイズを調整するために st.text_area を使用）
 # 入力枠の高さを2倍に設定
@@ -57,11 +59,17 @@ if text:
             st.write(f"かかった時間は {round(reading_time_m, 2)} 分で")
             st.write(f"あなたのWPMは: {round(wpm, 2)} でした")
 
-    # 英文のフォントサイズを12～14ポイントに変更
-    st.markdown(f"""
-        <style>
-            .text_area textarea {{
-                font-size: 14px;  /* フォントサイズを14pxに設定 */
-            }}
-        </style>
-    """, unsafe_allow_html=True)
+# フォントサイズを14pxに変更
+st.markdown("""
+    <style>
+        .streamlit-expanderHeader {
+            font-size: 14px !important;
+        }
+        .css-1d391kg {
+            font-size: 14px !important;
+        }
+        textarea {
+            font-size: 14px !important; /* フォントサイズを14pxに設定 */
+        }
+    </style>
+""", unsafe_allow_html=True)
