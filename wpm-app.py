@@ -26,7 +26,11 @@ if text:
     totalwords = len(words)
 
     # 総語数を表示
-    st.write(f"これから読む英文の総語数は {totalwords} です")
+    col1, col2 = st.columns([1, 2])  # 2つのカラムを作成（左と右）
+    
+    # 左カラムに総語数を表示
+    with col1:
+        st.write(f"これから読む英文の総語数は {totalwords} です")
 
     # リーディングスタートボタンが押されたとき
     if st.button("リーディングスタート"):
@@ -55,9 +59,10 @@ if text:
             # WPMを計算
             wpm = totalwords / reading_time_m
 
-            # 結果を表示
-            st.write(f"かかった時間は {round(reading_time_m, 2)} 分で")
-            st.write(f"あなたのWPMは: {round(wpm, 2)} でした")
+            # 結果を右カラムに表示
+            with col2:
+                st.write(f"かかった時間は {round(reading_time_m, 2)} 分で")
+                st.write(f"あなたのWPMは: {round(wpm, 2)} でした")
 
 # フォントサイズを18pxに変更
 st.markdown("""
