@@ -53,7 +53,6 @@ if text:
         # 結果を表示
         st.write(f"かかった時間は {round(reading_time_m, 2)} 分で")
         st.write(f"あなたのWPMは: {round(wpm, 2)} でした")
-=======
 import streamlit as st
 import time
 
