@@ -3,8 +3,8 @@ import streamlit as st
 # タイトルを表示
 st.title("WPM（Words Per Minute）測定アプリ")
 
-# 読む英文を入力（keyを指定してIDの重複を避ける）
-text = st.text_input("読む英文を入力してください", key="text_input_1")
+# 読む英文を入力（サイズを調整するために st.text_area を使用）
+text = st.text_area("読む英文を入力してください", height=200)  # heightを変更して高さを調整
 
 if text:
     # 単語を区切る
